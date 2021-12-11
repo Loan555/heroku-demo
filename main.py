@@ -26,13 +26,13 @@ def testConnectDB():
 async def root():
     return {"messenger": "Hello wold"}
 
-
-@app.get("/test")
-async def test():
-    result = list()
-    for x in people.find({}, {"_id": 0, "MSV": 1, "Name": 1}):
-        result.append(str(x))
-    return {"result": result}
+#
+# @app.get("/test")
+# async def test():
+#     result = list()
+#     for x in people.find({}, {"_id": 0, "MSV": 1, "Name": 1}):
+#         result.append(str(x))
+#     return {"result": result}
 
 # if __name__ == "__main__":
 #     uvicorn.run(app, host="127.0.0.1", port=8000)
