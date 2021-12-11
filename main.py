@@ -1,26 +1,25 @@
-import uvicorn
 from fastapi import FastAPI
 from pymongo import MongoClient
 
 app = FastAPI()
-
-myConnection = "mongodb+srv://loan:loan123456@cluster0.cqrpj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-
-client = MongoClient(myConnection)
-db = client.myFirstDatabase
-people = db.student
-
-
-def findAll():
-    return people.find()
-
-
-def testConnectDB():
-    try:
-        return client.server_info()
-    except Exception:
-        return "Unable connect to server"
-
+#
+# myConnection = "mongodb+srv://loan:loan123456@cluster0.cqrpj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+#
+# client = MongoClient(myConnection)
+# db = client.myFirstDatabase
+# people = db.student
+#
+#
+# def findAll():
+#     return people.find()
+#
+#
+# def testConnectDB():
+#     try:
+#         return client.server_info()
+#     except Exception:
+#         return "Unable connect to server"
+#
 
 @app.get("/")
 async def root():
